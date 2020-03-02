@@ -16,12 +16,15 @@ import patterns.Decorator;
 import java.util.List;
 import java.util.ArrayList;
 
+//Main Class for program execution
 public class Main{
     public static void main(String[] args) {
-        RentalStore rs = new RentalStore();
+        //Creation of Rental Store to store records
+    	RentalStore rs = new RentalStore();
         for(int i = 0;i<12;i++){
         Random rand = new Random();
         int num = rand.nextInt(3)+1;
+        //Storing Customers
         if(num==1){
         Customer customer = CustomerFactory.getCustomer("CasualCustomer", "CasualCustomer"+(i));
         rs.addCustomer(customer);
@@ -39,7 +42,7 @@ public class Main{
         int total = 0;
 
        
-
+        //Simulation for 34 days
         for(int i = 0;i<34;i++){
             if(Luxury.count>=0){
                 System.out.println(Luxury.count);
@@ -61,7 +64,7 @@ public class Main{
                 System.out.println(Economy.count);
                 System.out.println(Economy.ids);
             }
-            
+            //Handling the return of Cars
             List<Customer> customers = rs.returnCustomer();
             for(Customer customer:customers){
                 List<RentalRecord> rrlist = customer.getRentalRecord();
@@ -70,10 +73,10 @@ public class Main{
                 int numberOfDaysRented=0;
                 if(rrlist.get(k).getDecoratorOptions().size() > 0) 
                 	numberOfDaysRented = rrlist.get(k).getDecoratorOptions().get(0).num_days;
-                System.out.println("Rented Days");
-                System.out.println(numberOfDaysRented);
-                System.out.println("I"+i);
-                System.out.println(buyingDay+numberOfDaysRented);
+                //System.out.println("Rented Days");
+                //System.out.println(numberOfDaysRented);
+                //System.out.println("I"+i);
+                //System.out.println(buyingDay+numberOfDaysRented);
                 List<String> iids = rrlist.get(k).getIds();
                 if(i==(buyingDay+numberOfDaysRented)){
                 	//System.out.println("Hellllo");
@@ -134,6 +137,7 @@ public class Main{
                     	else
                     		cusKind = 2;
                     }
+                    //Using Factory for initialization of Cars and Decorator for addonproperty.
                     for (int j=0;j<cond;j++){
                         int carno=randomGen.nextInt(5)+1;
                         //System.out.println(carno);

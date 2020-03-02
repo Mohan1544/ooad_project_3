@@ -1,12 +1,13 @@
 package classes;
 import java.util.ArrayList;
+//Economy class extending base class Car
 import java.util.List;
 public class Economy extends Car{
 
     public static int count = 5;
 
     public static int price = 10;
-    
+    //static member for storing Car ids for licenseplates
     public static List<String> ids = new ArrayList<String>() {{
     	add("EC0");
     	add("EC1");
@@ -44,6 +45,7 @@ public class Economy extends Car{
     public int getCount(){
         return count;
     }
+    //Handling return of Cars
     public void onReturn(List<String> idss){
     		System.out.println("Economy");
         	System.out.println("Hello There");

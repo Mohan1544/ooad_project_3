@@ -4,7 +4,7 @@ import classes.BusinessCustomer;
 import classes.CasualCustomer;
 import classes.Customer;
 import classes.RegularCustomer;
-
+//CustomerFactory for creation of different customers.
 public class CustomerFactory{
     public static Customer getCustomer(String type,String name) {
         if (type.equalsIgnoreCase("RegularCustomer")) return new RegularCustomer(name);
@@ -14,7 +14,5 @@ public class CustomerFactory{
         return null;
     }
     
-    public static void insertCarsPurchased(int kind,String id) {
-    	
-    }
+    
 }

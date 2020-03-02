@@ -2,7 +2,7 @@ package classes;
 import java.util.ArrayList;
 import java.util.List;
 
-
+//Customer class for adding RentalRecords for each customer
 public abstract class Customer {
         String name;
         List<RentalRecord> record=new ArrayList<RentalRecord>();

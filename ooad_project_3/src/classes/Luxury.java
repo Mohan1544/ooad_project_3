@@ -2,12 +2,12 @@ package classes;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Luxury class extending base class Car
 public class Luxury extends Car{
     public static int price = 10;
 
     public static int count = 6;
-    
+  //static member for storing Car ids for licenseplates
     public static List<String> ids = new ArrayList<String>() {{
     	add("LX0");
     	add("LX1");
@@ -40,7 +40,7 @@ public class Luxury extends Car{
     public int quotePrice(){
         return price*num_days;
     }
-    
+  //Handling return of Cars
     public void onReturn(List<String> idss){
     	System.out.println("Luxury");
     	System.out.println("Hello There");

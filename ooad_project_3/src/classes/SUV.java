@@ -2,12 +2,12 @@ package classes;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Derived class SUV extending Car
 public class SUV extends Car{
     public static int price = 9;
 
     public static int count = 5;
-    
+  //static member for storing Car ids for licenseplates
     public static List<String> ids = new ArrayList<String>() {{
     	add("SU0");
     	add("SU1");
@@ -41,6 +41,7 @@ public class SUV extends Car{
     public int getCount(){
         return count;
     }
+    //Handling return of Cars
     public void onReturn(List<String> idss){
     	System.out.println("SUV");
     	System.out.println("Hello There");

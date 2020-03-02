@@ -2,7 +2,7 @@ package patterns;
 
 import classes.Car;
 import java.util.List;
-
+//Decorator class that is used for Addon options.
 public class Decorator extends Car{
     public int price;
     //public int num_days;

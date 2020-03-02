@@ -1,5 +1,5 @@
 package patterns;
-import org.junit.Test;
+
 import classes.Car;
 import classes.ChildSeat;
 import classes.Economy;
@@ -9,7 +9,7 @@ import classes.MiniVan;
 import classes.SUV;
 import classes.SatelliteRadio;
 import classes.Standard;
-
+//CategoryFactory for initialization of various kinds of Cars.
 public class CategoryFactory{
     public static Car getCar(String type, String name,int num_days,String id) {
             if(type.equals("Economy"))
@@ -27,6 +27,7 @@ public class CategoryFactory{
 
         
     }
+    //Addon options.
     public static Car addonoption(String type,String name,Car car,int numDays){
         if(type.equals("ChildSeat"))
             return new ChildSeat(numDays,car,name);
@@ -37,6 +38,7 @@ public class CategoryFactory{
         else
 		return null;
     }
+    //Static function for purchase of a car based on a LicensePlate
     public static void licensePlatePurchased(String type,String id) {
     	if(type.equals("Economy"))
     		Economy.removeLicensePlateFromList(id);

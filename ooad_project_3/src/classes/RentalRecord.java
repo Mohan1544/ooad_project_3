@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import patterns.Decorator;
-
+//RentalRecord stores rental information per customer.
 public class RentalRecord {
     public int dayofBuying;
     boolean status;
@@ -42,7 +42,7 @@ public class RentalRecord {
         }
         return total;
     }
-
+    //Function for returning Car
     public void returnCar(Customer cus,List<String> ids){
         for(int i=0;i<decoratorOptions.size();i++){
             Decorator dec=decoratorOptions.get(i);
@@ -57,6 +57,7 @@ public class RentalRecord {
                             break;
                         }
             }
+            //Processing return of Car
             dec.car.onReturn(ids);
             System.out.println(dec.car.name+"returned by customer"+ cus.name);
                     }
