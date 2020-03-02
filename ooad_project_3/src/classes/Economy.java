@@ -7,12 +7,23 @@ public class Economy extends Car{
 
     public static int price = 10;
     
-    public static List<String> ids = new ArrayList<String>(count);
+    public static List<String> ids = new ArrayList<String>() {{
+    	add("EC0");
+    	add("EC1");
+    	add("EC2");
+    	add("EC3");
+    	add("EC4");
+    }
+    };
+    public static void removeLicensePlateFromList(String id) {
+    	ids.remove(id);
+    }
+    
 
     private Economy(String name,int num_days,String id){
         this.name = name;
         this.num_days = num_days;
-        this.ids.add(id);
+        
 
     }
     public static Economy createInstance(String name,int num_days,String id){
@@ -33,8 +44,20 @@ public class Economy extends Car{
     public int getCount(){
         return count;
     }
-    public void onReturn(){
-        if(count<6)
-            count = count+1;
+    public void onReturn(List<String> idss){
+    		System.out.println("Economy");
+        	System.out.println("Hello There");
+        	
+        	if(count<5) {
+        		for(String i:idss) {
+        			//System.out.println("In-For-LOOP");
+        			if(i.substring(0,2).equals("EC")) {
+        				if(!ids.contains(i))
+        					ids.add(i);
+        			}
+        		}
+        		count = count+1;
+        		
+        	}
     }
 }

@@ -1,6 +1,7 @@
 package patterns;
 
 import classes.Car;
+import java.util.List;
 
 public class Decorator extends Car{
     public int price;
@@ -21,8 +22,10 @@ public class Decorator extends Car{
 
     
 	@Override
-	public void onReturn() {
+	public void onReturn(List<String> ids) {
 		// TODO Auto-generated method stub
+		//System.out.println("Decorator----Hello");
+		
 		
 	}
 }

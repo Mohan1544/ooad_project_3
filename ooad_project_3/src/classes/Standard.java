@@ -1,14 +1,29 @@
 package classes;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Standard extends Car{
     public static int price = 7;
 
     public static int count = 6;
 
-    public String id;
+    public static List<String> ids = new ArrayList<String>() {{
+    	add("SD0");
+    	add("SD1");
+    	add("SD2");
+    	add("SD3");
+    	add("SD4");
+    	add("SD5");
+    }
+    };
+    public static void removeLicensePlateFromList(String id) {
+    	ids.remove(id);
+    }
     private Standard(String name,int num_days,String id){
         this.name = name;
         this.num_days = num_days;
-        this.id = id;
+        
     }
     public static Standard createInstance(String name,int num_days,String id){
         if(count>=1){
@@ -26,8 +41,18 @@ public class Standard extends Car{
     public int getCount(){
         return count;
     }
-    public void onReturn(){
-        if(count<5)
+    public void onReturn(List<String> idss){
+    	System.out.println("Standard");
+    	System.out.println("Hello There");
+    	if(count<6) {
+    		for(String i:idss) {
+    			//System.out.println("In-For-LOOP");
+    			if(i.substring(0, 2).equals("SD")) {
+    				if(!ids.contains(i))
+    					ids.add(i);
+    		}
+    		}
             count = count+1;
+    	}
     }
 }

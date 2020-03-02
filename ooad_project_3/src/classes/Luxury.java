@@ -1,16 +1,31 @@
 package classes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Luxury extends Car{
     public static int price = 10;
 
-    public static int count = 2;
+    public static int count = 6;
     
-    public String id;
+    public static List<String> ids = new ArrayList<String>() {{
+    	add("LX0");
+    	add("LX1");
+    	add("LX2");
+    	add("LX3");
+    	add("LX4");
+    	add("LX5");
+    	
+    }
+    };
+    public static void removeLicensePlateFromList(String id) {
+    	ids.remove(id);
+    }
 
     private Luxury(String name,int num_days,String id){
         this.name = name;
         this.num_days = num_days;
-        this.id = id;
+        
     }
     public static Luxury createInstance(String name,int num_days,String id){
         if(count>=1){
@@ -26,8 +41,18 @@ public class Luxury extends Car{
         return price*num_days;
     }
     
-    public void onReturn(){
-        if(count<5)
+    public void onReturn(List<String> idss){
+    	System.out.println("Luxury");
+    	System.out.println("Hello There");
+    	if(count<6) {
+    		for(String i:idss) {
+    			//System.out.println("In-For-LOOP");
+    			if(i.substring(0, 2).equals("LX")) {
+    				if(!ids.contains(i))
+    					ids.add(i);
+    			}
+    		}
             count = count+1;
+    	}
     }
 }

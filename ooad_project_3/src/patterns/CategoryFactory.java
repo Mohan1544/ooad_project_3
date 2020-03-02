@@ -1,5 +1,5 @@
 package patterns;
-
+import org.junit.Test;
 import classes.Car;
 import classes.ChildSeat;
 import classes.Economy;
@@ -36,5 +36,18 @@ public class CategoryFactory{
             return new SatelliteRadio(numDays,car,name);
         else
 		return null;
+    }
+    public static void licensePlatePurchased(String type,String id) {
+    	if(type.equals("Economy"))
+    		Economy.removeLicensePlateFromList(id);
+    	else if(type.equals("Luxury"))
+    		Luxury.removeLicensePlateFromList(id);
+    	else if(type.equals("SUV"))
+    		SUV.removeLicensePlateFromList(id);
+    	else if(type.equals("Standard"))
+    		Standard.removeLicensePlateFromList(id);
+    	else if(type.equals("MiniVan"))
+    		MiniVan.removeLicensePlateFromList(id);
+    	
     }
 }

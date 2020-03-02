@@ -13,4 +13,8 @@ public class CustomerFactory{
         else 
         return null;
     }
+    
+    public static void insertCarsPurchased(int kind,String id) {
+    	
+    }
 }
