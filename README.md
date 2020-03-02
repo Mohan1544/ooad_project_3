@@ -9,5 +9,7 @@ Sankaranarayanan
 1.Import the project into IDE workspace.
 <br/>
 2.Please do configure the JUnit library if you find any issues while running the JUnit test cases.
+<br/>
 3.Run the main class.
+<br/>
 4.Check the Console for the program output.
